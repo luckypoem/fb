@@ -2,11 +2,11 @@ name: 部署博客
 
 env:
   # hexo源文件仓库
-  BLOG_SOURCE: flytam/blog-source
+  BLOG_SOURCE: luckypoem/hexo
   # issue链接
-  ISSUE_URL: https://github.com/flytam/blog/issues
+  ISSUE_URL: https://github.com/luckypoem/fb/issues
   # blog部署的页面
-  BLOG: flytam/blog
+  BLOG: luckypoem/fb
   # ${{ github.event.issue.user.login }}
 
 on:
@@ -28,7 +28,8 @@ jobs:
           repository: ${{ env.BLOG_SOURCE }}
           ref: 'main'
           token: ${{ secrets.token }}
-      - name: issue生成 hexo文章
+      - 
+        name: issue生成 hexo文章
         uses: flytam/github-issue-to-hexo@main
         with:
           issue_url: ${{ env.ISSUE_URL }}
