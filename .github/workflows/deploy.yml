@@ -30,7 +30,7 @@ jobs:
           token: ${{ secrets.token }}
       - 
         name: issue生成 hexo文章
-        uses: flytam/github-issue-to-hexo@main
+        uses: luckypoem/github-issue-to-hexo@main
         with:
           issue_url: ${{ env.ISSUE_URL }}
           output: 'source/_posts'
@@ -40,7 +40,7 @@ jobs:
           echo $(date) > update.md
           git add .
           git config user.name "issue-to-hexo bot"
-          git config user.email "tanjiahui2015@foxmail.com"
+          git config user.email "luckypoem@gmail.com"
           git commit -m "Add a post"
       - name: 推送hexo源文件
         uses: ad-m/github-push-action@master
